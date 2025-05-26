@@ -49,7 +49,7 @@ class GameSession:
     dialogs: list = field(default_factory=list, repr=False)
     init_conds: dict = field(default_factory=dict, repr=False)
     name: str = None
-    target: np.ndarray = field(default_factory=lambda: np.zeros(BUILD_ZONE_SIZE, dtype=np.int), repr=False)
+    target: np.ndarray = field(default_factory=lambda: np.zeros(BUILD_ZONE_SIZE, dtype=np.int32), repr=False)
 
     def episode_steps(self):
         return sum([sum([len(ev.actions) for ev in event_step]) for event_step in self.events.values()])
