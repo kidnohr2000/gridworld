@@ -346,7 +346,7 @@ class ActionsParser:
                 block[3] = self.block_map[block[3]]
                 target_blocks.append(np.array(block[:3]))
                 target_block_ids.append(block[3])
-        target = np.zeros(BUILD_ZONE_SIZE, dtype=np.int)
+        target = np.zeros(BUILD_ZONE_SIZE, dtype=np.int32)
         if len(target_blocks) != 0:
             target[tuple(np.array(target_blocks).T.tolist())] = target_block_ids
         game_session.target =  target
